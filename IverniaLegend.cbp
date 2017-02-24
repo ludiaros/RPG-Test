@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_project_file>
-	<FileVersion major="1" minor="6" />
-	<Project>
-		<Option title="IverniaLegend" />
-		<Option pch_mode="2" />
-		<Option compiler="gcc" />
-		<Option extended_obj_names="1" />
-		<Build>
-			<Target title="Release">
-				<Option output="bin/IverniaLegend" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="bin" />
-				<Option object_output="obj/" />
-				<Option type="1" />
-				<Option compiler="gcc" />
-				<Option use_console_runner="0" />
-				<Compiler>
-					<Add option="-O2" />
-					<Add option="-std=c++11" />
-					<Add directory="../IverniaLegend" />
-				</Compiler>
-				<Linker>
-					<Add option="-s" />
-				</Linker>
-			</Target>
-		</Build>
-		<Compiler>
-			<Add option="-Wmain" />
-			<Add option="-Wall" />
-			<Add option="-std=c++11" />
-			<Add option="-fexceptions" />
-			<Add option="-DSFML_STATIC" />
-			<Add directory="C:/SFML-2.3.2-MinGW-32/include" />
-		</Compiler>
-		<Linker>
-			<Add library="sfml-graphics" />
-			<Add library="sfml-window" />
-			<Add library="sfml-system" />
-			<Add directory="C:/SFML-2.3.2-MinGW-32/lib" />
-		</Linker>
-		<Unit filename="Cursor.cpp" />
-		<Unit filename="Cursor.hpp" />
-		<Unit filename="GameScreen.cpp" />
-		<Unit filename="GameScreen.hpp" />
-		<Unit filename="GameScreenConfig.cpp" />
-		<Unit filename="GameScreenConfig.hpp" />
-		<Unit filename="GameScreenExit.cpp" />
-		<Unit filename="GameScreenExit.hpp" />
-		<Unit filename="GameScreenLoad.cpp" />
-		<Unit filename="GameScreenLoad.hpp" />
-		<Unit filename="GameScreenManager.cpp" />
-		<Unit filename="GameScreenManager.hpp" />
-		<Unit filename="GameScreenPlay.cpp" />
-		<Unit filename="GameScreenPlay.hpp" />
-		<Unit filename="ResourceManager.cpp" />
-		<Unit filename="ResourceManager.hpp" />
-		<Unit filename="Tile.cpp" />
-		<Unit filename="Tile.hpp" />
-		<Unit filename="WindowManager.cpp" />
-		<Unit filename="WindowManager.hpp" />
-		<Unit filename="WorldManager.cpp" />
-		<Unit filename="WorldManager.hpp" />
-		<Unit filename="globals.hpp" />
-		<Unit filename="main.cpp" />
-		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
-			<lib_finder disable_auto="1" />
-		</Extensions>
-	</Project>
+    <FileVersion major="1" minor="6" />
+    <Project>
+        <Option title="IverniaLegend" />
+        <Option pch_mode="2" />
+        <Option compiler="gcc" />
+        <Option extended_obj_names="1" />
+        <Build>
+            <Target title="Release">
+                <Option output="bin/IverniaLegend" prefix_auto="1" extension_auto="1" />
+                <Option working_dir="bin" />
+                <Option object_output="obj/" />
+                <Option type="1" />
+                <Option compiler="gcc" />
+                <Option use_console_runner="0" />
+                <Compiler>
+                    <Add option="-O2" />
+                    <Add option="-std=c++11" />
+                    <Add directory="../IverniaLegend" />
+                </Compiler>
+                <Linker>
+                    <Add option="-s" />
+                </Linker>
+            </Target>
+        </Build>
+        <Compiler>
+            <Add option="-Wmain" />
+            <Add option="-Wall" />
+            <Add option="-std=c++11" />
+            <Add option="-fexceptions" />
+            <Add option="-DSFML_STATIC" />
+            <Add directory="C:/SFML-2.3.2-MinGW-32/include" />
+        </Compiler>
+        <Linker>
+            <Add library="sfml-graphics" />
+            <Add library="sfml-window" />
+            <Add library="sfml-system" />
+            <Add directory="C:/SFML-2.3.2-MinGW-32/lib" />
+        </Linker>
+        <Unit filename="Cursor.cpp" />
+        <Unit filename="Cursor.hpp" />
+        <Unit filename="GameScene.cpp" />
+        <Unit filename="GameScene.hpp" />
+        <Unit filename="GameSceneConfig.cpp" />
+        <Unit filename="GameSceneConfig.hpp" />
+        <Unit filename="GameSceneExit.cpp" />
+        <Unit filename="GameSceneExit.hpp" />
+        <Unit filename="GameSceneLoad.cpp" />
+        <Unit filename="GameSceneLoad.hpp" />
+        <Unit filename="GameSceneManager.cpp" />
+        <Unit filename="GameSceneManager.hpp" />
+        <Unit filename="GameScenePlay.cpp" />
+        <Unit filename="GameScenePlay.hpp" />
+        <Unit filename="ResourceManager.cpp" />
+        <Unit filename="ResourceManager.hpp" />
+        <Unit filename="Tile.cpp" />
+        <Unit filename="Tile.hpp" />
+        <Unit filename="WindowManager.cpp" />
+        <Unit filename="WindowManager.hpp" />
+        <Unit filename="WorldManager.cpp" />
+        <Unit filename="WorldManager.hpp" />
+        <Unit filename="globals.hpp" />
+        <Unit filename="main.cpp" />
+        <Extensions>
+            <code_completion />
+            <envvars />
+            <debugger />
+            <lib_finder disable_auto="1" />
+        </Extensions>
+    </Project>
 </CodeBlocks_project_file>
