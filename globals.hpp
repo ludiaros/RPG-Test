@@ -14,7 +14,7 @@
 #define SPR_W   32000   //Ancho del sprite
 #define SPR_H   32000   //Altura del sprite
 
-enum GameScreenStates {LOAD, CONFIG, PLAY, PAUSED, RESET, OVER, WIN, CREDITS, EXIT};
+enum GameSceneStates {LOAD, CONFIG, PLAY, PAUSED, RESET, OVER, WIN, CREDITS, EXIT};
 
 enum Align {TL, TC, TR, ML, MC, MR, BL, BC, BR};
 

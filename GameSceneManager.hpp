@@ -5,18 +5,18 @@
 
 #include "globals.hpp"
 
-#include "GameScreen.hpp"
+#include "GameScene.hpp"
 
-class GameScreenManager {
+class GameSceneManager {
 
     public:
         //Constructors
-        GameScreenManager();
+        GameSceneManager();
         //Methods
-        void                        addState        (int id, GameScreen* state);
+        void                        addState        (int id, GameScene* state);
         void                        previousState   ();
         void                        setState        (unsigned int status);
-        GameScreen*                 getState        ();
+        GameScene*                 getState        ();
         //Fields
         unsigned int                currStatus;
         unsigned int                prevStatus;
@@ -25,7 +25,7 @@ class GameScreenManager {
         //Constructors
         //Methods
         //Fields
-        std::map<int, GameScreen*>  listStates;
+        std::map<int, GameScene*>  listStates;
 };
 
 #endif

@@ -1,20 +1,20 @@
-#ifndef GAMEEXIT_HPP
-#define GAMEEXIT_HPP
+#ifndef GAME_HPP
+#define GAME_HPP
 
 #include "globals.hpp"
-#include "GameScreen.hpp"
 #include "WindowManager.hpp"
 
-class GameScreenExit : public GameScreen {
+class GameScene {
 
     public:
         //Constructors
-        GameScreenExit();
+        GameScene();
         //Methods
         virtual void    handleEvents    (WindowManager& window, unsigned int& status);
         virtual void    update          (WindowManager& window, unsigned int& status);
         virtual void    draw            (WindowManager& window, unsigned int& status);
         //Fields
+        unsigned int    id;
 
     private:
         //Constructors

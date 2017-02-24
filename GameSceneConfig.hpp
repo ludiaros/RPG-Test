@@ -4,14 +4,14 @@
 #include <vector>
 
 #include "globals.hpp"
-#include "GameScreen.hpp"
+#include "GameScene.hpp"
 #include "WindowManager.hpp"
 
-class GameScreenConfig : public GameScreen {
+class GameSceneConfig : public GameScene {
 
     public:
         //Constructors
-        GameScreenConfig();
+        GameSceneConfig();
         //Methods
         virtual void                handleEvents    (WindowManager& window, unsigned int& status);
         virtual void                update          (WindowManager& window, unsigned int& status);

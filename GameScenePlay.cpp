@@ -1,13 +1,13 @@
-#include "GameScreenPlay.hpp"
+#include "GameScenePlay.hpp"
 
-GameScreenPlay::GameScreenPlay() {
+GameScenePlay::GameScenePlay() {
     world = WorldManager();
     cursor = Cursor();
     //players = PlayerManager();
     start = false;
 }
 
-void GameScreenPlay::handleEvents(WindowManager& window, unsigned int& status) {
+void GameScenePlay::handleEvents(WindowManager& window, unsigned int& status) {
 
     window.eventMap["VK_UP"] = sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
     window.eventMap["VK_W"] = sf::Keyboard::isKeyPressed(sf::Keyboard::W);
@@ -32,7 +32,7 @@ void GameScreenPlay::handleEvents(WindowManager& window, unsigned int& status) {
     }
 }
 
-void GameScreenPlay::update(WindowManager& window, unsigned int& status) {
+void GameScenePlay::update(WindowManager& window, unsigned int& status) {
 
     //Verifica si hay que reiniciar el juego o continuar con la ultima instancia
     if (!start) {
@@ -64,7 +64,7 @@ void GameScreenPlay::update(WindowManager& window, unsigned int& status) {
 
 }
 
-void GameScreenPlay::draw(WindowManager& window, unsigned int& status) {
+void GameScenePlay::draw(WindowManager& window, unsigned int& status) {
 
     window.clear();
     window.resetView();

@@ -1,6 +1,6 @@
-#include "GameScreenLoad.hpp"
+#include "GameSceneLoad.hpp"
 
-GameScreenLoad::GameScreenLoad() {
+GameSceneLoad::GameSceneLoad() {
 
     cursor = 0;
 
@@ -34,7 +34,7 @@ GameScreenLoad::GameScreenLoad() {
     newStatus.push_back(EXIT);
 }
 
-void GameScreenLoad::handleEvents(WindowManager& window, unsigned int& status) {
+void GameSceneLoad::handleEvents(WindowManager& window, unsigned int& status) {
 
     mousePos = sf::Mouse::getPosition(window);
 
@@ -67,10 +67,10 @@ void GameScreenLoad::handleEvents(WindowManager& window, unsigned int& status) {
     }
 }
 
-void GameScreenLoad::update(WindowManager& window, unsigned int& status) {
+void GameSceneLoad::update(WindowManager& window, unsigned int& status) {
 }
 
-void GameScreenLoad::draw(WindowManager& window, unsigned int& status) {
+void GameSceneLoad::draw(WindowManager& window, unsigned int& status) {
 
     window.clear();
 

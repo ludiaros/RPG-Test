@@ -4,19 +4,19 @@
 
 #include "ResourceManager.hpp"
 #include "WindowManager.hpp"
-#include "GameScreenManager.hpp"
-#include "GameScreenLoad.hpp"
-#include "GameScreenConfig.hpp"
-#include "GameScreenPlay.hpp"
-#include "GameScreenPause.hpp"
-#include "GameScreenOver.hpp"
-#include "GameScreenWin.hpp"
-#include "GameScreenReset.hpp"
-#include "GameScreenCredits.hpp"
-#include "GameScreenExit.hpp"
+#include "GameSceneManager.hpp"
+#include "GameSceneLoad.hpp"
+#include "GameSceneConfig.hpp"
+#include "GameScenePlay.hpp"
+#include "GameScenePause.hpp"
+#include "GameSceneOver.hpp"
+#include "GameSceneWin.hpp"
+#include "GameSceneReset.hpp"
+#include "GameSceneCredits.hpp"
+#include "GameSceneExit.hpp"
 
 WindowManager     window;
-GameScreenManager gstate;
+GameSceneManager gstate;
 
 int main() {
 
@@ -46,22 +46,22 @@ int main() {
     //----------------------------------------------------------------------------------------------
 
     //INITIALIZE GAME STATES -----------------------------------------------------------------------
-    gstate.addState(LOAD,    new GameScreenLoad());
-    gstate.addState(CONFIG,  new GameScreenConfig());
-    gstate.addState(PLAY,    new GameScreenPlay());
-    gstate.addState(PAUSED,  new GameScreen());
-    gstate.addState(RESET,   new GameScreen());
-    gstate.addState(OVER,    new GameScreen());
-    gstate.addState(WIN,     new GameScreen());
-    gstate.addState(CREDITS, new GameScreen());
-    gstate.addState(EXIT,    new GameScreenExit());
+    gstate.addState(LOAD,    new GameSceneLoad());
+    gstate.addState(CONFIG,  new GameSceneConfig());
+    gstate.addState(PLAY,    new GameScenePlay());
+    gstate.addState(PAUSED,  new GameScene());
+    gstate.addState(RESET,   new GameScene());
+    gstate.addState(OVER,    new GameScene());
+    gstate.addState(WIN,     new GameScene());
+    gstate.addState(CREDITS, new GameScene());
+    gstate.addState(EXIT,    new GameSceneExit());
     /*
-    gstate.addState(PAUSED,  new GameScreenPause());
-    gstate.addState(RESET,   new GameScreenReset());
-    gstate.addState(OVER,    new GameScreenOver());
-    gstate.addState(WIN,     new GameScreenWin());
-    gstate.addState(CREDITS, new GameScreenCredits());
-    gstate.addState(EXIT,    new GameScreenExit());
+    gstate.addState(PAUSED,  new GameScenePause());
+    gstate.addState(RESET,   new GameSceneReset());
+    gstate.addState(OVER,    new GameSceneOver());
+    gstate.addState(WIN,     new GameSceneWin());
+    gstate.addState(CREDITS, new GameSceneCredits());
+    gstate.addState(EXIT,    new GameSceneExit());
     */
     gstate.currStatus = LOAD;
     //----------------------------------------------------------------------------------------------
@@ -75,11 +75,11 @@ int main() {
         gstate.getState()->update(window, gstate.currStatus);
         gstate.getState()->draw(window, gstate.currStatus);
 
-        //Modificar el GameScreenManager para que acepte:
-        //nextStatus -> El valor que se pasa como referencia a cada GameScreen para que lo modifique
-        //              pero la idea es que nose modifique dentro del GameScreen, sino en esta etapa
+        //Modificar el GameSceneManager para que acepte:
+        //nextStatus -> El valor que se pasa como referencia a cada GameScene para que lo modifique
+        //              pero la idea es que nose modifique dentro del GameScene, sino en esta etapa
         //previousStatus -> Guarda un respaldo del estado anterior antes de cambiar el estado
-        //currStatus -> El puntero que se va a usar realmente para direccionar los GameScreen
+        //currStatus -> El puntero que se va a usar realmente para direccionar los GameScene
     }
     //----------------------------------------------------------------------------------------------
 

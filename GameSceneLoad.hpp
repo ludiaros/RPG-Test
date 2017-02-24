@@ -6,15 +6,15 @@
 #include "globals.hpp"
 #include "ResourceManager.hpp"
 
-#include "GameScreen.hpp"
-#include "GameScreenManager.hpp"
+#include "GameScene.hpp"
+#include "GameSceneManager.hpp"
 #include "WindowManager.hpp"
 
-class GameScreenLoad : public GameScreen {
+class GameSceneLoad : public GameScene {
 
     public:
         //Constructors
-        GameScreenLoad();
+        GameSceneLoad();
         //Methods
         virtual void    handleEvents    (WindowManager& window, unsigned int& status);
         virtual void    update          (WindowManager& window, unsigned int& status);

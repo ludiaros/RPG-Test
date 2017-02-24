@@ -2,18 +2,18 @@
 #define GAMEPLAY_HPP
 
 #include "globals.hpp"
-#include "GameScreen.hpp"
+#include "GameScene.hpp"
 #include "WindowManager.hpp"
 #include "WorldManager.hpp"
 #include "Cursor.hpp"
 //#include "GunsManager.hpp"
 //#include "ShipsManager.hpp"
 
-class GameScreenPlay : public GameScreen {
+class GameScenePlay : public GameScene {
 
     public:
         //Constructors
-        GameScreenPlay();
+        GameScenePlay();
         //Methods
         virtual void    handleEvents    (WindowManager& window, unsigned int& status);
         virtual void    update          (WindowManager& window, unsigned int& status);

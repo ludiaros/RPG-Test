@@ -1,6 +1,6 @@
-#include "GameScreenConfig.hpp"
+#include "GameSceneConfig.hpp"
 
-GameScreenConfig::GameScreenConfig() {
+GameSceneConfig::GameSceneConfig() {
 
     cursor = 0;
 
@@ -9,7 +9,7 @@ GameScreenConfig::GameScreenConfig() {
     newStatus.push_back(LOAD);
 }
 
-void GameScreenConfig::handleEvents(WindowManager& window, unsigned int& status) {
+void GameSceneConfig::handleEvents(WindowManager& window, unsigned int& status) {
 
     mousePos = sf::Mouse::getPosition(window);
 
@@ -42,10 +42,10 @@ void GameScreenConfig::handleEvents(WindowManager& window, unsigned int& status)
     }
 }
 
-void GameScreenConfig::update(WindowManager& window, unsigned int& status) {
+void GameSceneConfig::update(WindowManager& window, unsigned int& status) {
 }
 
-void GameScreenConfig::draw(WindowManager& window, unsigned int& status) {
+void GameSceneConfig::draw(WindowManager& window, unsigned int& status) {
 
     window.clear();
 
