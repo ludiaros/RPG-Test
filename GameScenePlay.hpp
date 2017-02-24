@@ -15,7 +15,7 @@ class GameScenePlay : public GameScene {
         //Constructors
         GameScenePlay();
         //Methods
-        virtual void    handleEvents    (WindowManager& window, unsigned int& status);
+        virtual void    handleInput     (WindowManager& window, unsigned int& status);
         virtual void    update          (WindowManager& window, unsigned int& status);
         virtual void    draw            (WindowManager& window, unsigned int& status);
         //Fields
@@ -24,9 +24,9 @@ class GameScenePlay : public GameScene {
         //Constructors
         //Methods
         //Fields
-        bool            start;
-        WorldManager    world;
-        Cursor          cursor;
+        //bool            start;
+        //WorldManager    world;
+        //Cursor          cursor;
         //GunsManager     gunsm;
         //ShipsManager    shipm;
 };

@@ -5,18 +5,18 @@
 #include "ResourceManager.hpp"
 #include "WindowManager.hpp"
 #include "GameSceneManager.hpp"
-#include "GameSceneLoad.hpp"
-#include "GameSceneConfig.hpp"
+//#include "GameSceneLoad.hpp"
+//#include "GameSceneConfig.hpp"
 #include "GameScenePlay.hpp"
-#include "GameScenePause.hpp"
-#include "GameSceneOver.hpp"
-#include "GameSceneWin.hpp"
-#include "GameSceneReset.hpp"
-#include "GameSceneCredits.hpp"
-#include "GameSceneExit.hpp"
+//#include "GameScenePause.hpp"
+//#include "GameSceneOver.hpp"
+//#include "GameSceneWin.hpp"
+//#include "GameSceneReset.hpp"
+//#include "GameSceneCredits.hpp"
+//#include "GameSceneExit.hpp"
 
-WindowManager     window;
-GameSceneManager gstate;
+WindowManager       window;
+GameSceneManager    scenes;
 
 int main() {
 
@@ -38,42 +38,35 @@ int main() {
     ResourceManager::addTexture("tile7", "data/gfx/007.png");
     ResourceManager::addTexture("tile8", "data/gfx/008.png");
     ResourceManager::addTexture("tile9", "data/gfx/009.png");
+
+    //ResourceManager::addSound("sound0", "data/sound/000.ogg")
     //----------------------------------------------------------------------------------------------
 
-    //INITIALIZE OPTIONS AND GAME DATA -------------------------------------------------------------
-    window.gameInfo.maxEnemies = 2500;
-    window.gameInfo.maxHeroes  = 5;
+    //INITIALIZE GAME SCENES -----------------------------------------------------------------------
+    /*scenes.addScene(LOAD,    new GameSceneLoad());
+    scenes.addScene(CONFIG,  new GameSceneConfig());
+    scenes.addScene(PLAY,    new GameScenePlay());
+    scenes.addScene(PAUSED,  new GameScene());
+    scenes.addScene(RESET,   new GameScene());
+    scenes.addScene(OVER,    new GameScene());
+    scenes.addScene(WIN,     new GameScene());
+    scenes.addScene(CREDITS, new GameScene());
+    scenes.addScene(EXIT,    new GameSceneExit());*/
+
+    scenes.setStatus(LOAD);
     //----------------------------------------------------------------------------------------------
 
-    //INITIALIZE GAME STATES -----------------------------------------------------------------------
-    gstate.addState(LOAD,    new GameSceneLoad());
-    gstate.addState(CONFIG,  new GameSceneConfig());
-    gstate.addState(PLAY,    new GameScenePlay());
-    gstate.addState(PAUSED,  new GameScene());
-    gstate.addState(RESET,   new GameScene());
-    gstate.addState(OVER,    new GameScene());
-    gstate.addState(WIN,     new GameScene());
-    gstate.addState(CREDITS, new GameScene());
-    gstate.addState(EXIT,    new GameSceneExit());
-    /*
-    gstate.addState(PAUSED,  new GameScenePause());
-    gstate.addState(RESET,   new GameSceneReset());
-    gstate.addState(OVER,    new GameSceneOver());
-    gstate.addState(WIN,     new GameSceneWin());
-    gstate.addState(CREDITS, new GameSceneCredits());
-    gstate.addState(EXIT,    new GameSceneExit());
-    */
-    gstate.currStatus = LOAD;
+    //INITIALIZE WORLD AND ENTITIES-----------------------------------------------------------------
     //----------------------------------------------------------------------------------------------
 
     //MAIN LOOP-------------------------------------------------------------------------------------
     while (window.isOpen()) {
 
-        window.handleWindowEvents(gstate.currStatus);
+        window.handleWindowEvents(scenes.currStatus);
 
-        gstate.getState()->handleEvents(window, gstate.currStatus);
-        gstate.getState()->update(window, gstate.currStatus);
-        gstate.getState()->draw(window, gstate.currStatus);
+        scenes.getScene()->handleInput(window, scenes.currStatus);
+        scenes.getScene()->update(window, scenes.currStatus);
+        scenes.getScene()->draw(window, scenes.currStatus);
 
         //Modificar el GameSceneManager para que acepte:
         //nextStatus -> El valor que se pasa como referencia a cada GameScene para que lo modifique

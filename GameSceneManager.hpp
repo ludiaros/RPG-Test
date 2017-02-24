@@ -13,19 +13,19 @@ class GameSceneManager {
         //Constructors
         GameSceneManager();
         //Methods
-        void                        addState        (int id, GameScene* state);
-        void                        previousState   ();
-        void                        setState        (unsigned int status);
-        GameScene*                 getState        ();
+        void                        addScene        (int id, GameScene* scene);
+        void                        previousScene   ();
+        void                        setScene        (unsigned int scene);
+        GameScene*                  getScene        ();
         //Fields
-        unsigned int                currStatus;
-        unsigned int                prevStatus;
+        unsigned int                currScene;
+        unsigned int                prevScene;
 
     private:
         //Constructors
         //Methods
         //Fields
-        std::map<int, GameScene*>  listStates;
+        std::map<int, GameScene*>  listScenes;
 };
 
 #endif

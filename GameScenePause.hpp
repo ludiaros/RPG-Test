@@ -2,16 +2,16 @@
 #define GAMEPAUSE_HPP
 
 #include "globals.hpp"
-#include "GameScreen.hpp"
+#include "GameScene.hpp"
 #include "WindowManager.hpp"
 
-class GameScreenPause : public GameScreen {
+class GameScenePause : public GameScene {
 
     public:
         //Constructors
-        GameScreenPause();
+        GameScenePause();
         //Methods
-        virtual void    handleEvents    (WindowManager& window, unsigned int& status);
+        virtual void    handleInput     (WindowManager& window, unsigned int& status);
         virtual void    update          (WindowManager& window, unsigned int& status);
         virtual void    draw            (WindowManager& window, unsigned int& status);
         //Fields

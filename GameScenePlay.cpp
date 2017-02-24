@@ -1,13 +1,13 @@
 #include "GameScenePlay.hpp"
 
 GameScenePlay::GameScenePlay() {
-    world = WorldManager();
-    cursor = Cursor();
+    //world = WorldManager();
+    //cursor = Cursor();
     //players = PlayerManager();
-    start = false;
+    //start = false;
 }
 
-void GameScenePlay::handleEvents(WindowManager& window, unsigned int& status) {
+void GameScenePlay::handleInput(WindowManager& window, unsigned int& status) {
 
     window.eventMap["VK_UP"] = sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
     window.eventMap["VK_W"] = sf::Keyboard::isKeyPressed(sf::Keyboard::W);
@@ -35,7 +35,7 @@ void GameScenePlay::handleEvents(WindowManager& window, unsigned int& status) {
 void GameScenePlay::update(WindowManager& window, unsigned int& status) {
 
     //Verifica si hay que reiniciar el juego o continuar con la ultima instancia
-    if (!start) {
+    /*if (!start) {
 
         srand(time(0));
 
@@ -45,14 +45,14 @@ void GameScenePlay::update(WindowManager& window, unsigned int& status) {
         //shipm.reset(window);//Reincia las naves (reinicia el estado y la posicion de cada nave)
 
         start = true;
-    }
+    }*/
 
     window.restartClock();
 
     //Actualiza la logica --------------------------------------------------------------------------
     if (!window.paused) {
 
-        world.update(window);
+        //world.update(window);
 
         //players.update(window, world);
         //enemies.update(window, world);

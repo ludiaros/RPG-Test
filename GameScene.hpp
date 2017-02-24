@@ -10,7 +10,7 @@ class GameScene {
         //Constructors
         GameScene();
         //Methods
-        virtual void    handleEvents    (WindowManager& window, unsigned int& status);
+        virtual void    handleInput     (WindowManager& window, unsigned int& status);
         virtual void    update          (WindowManager& window, unsigned int& status);
         virtual void    draw            (WindowManager& window, unsigned int& status);
         //Fields

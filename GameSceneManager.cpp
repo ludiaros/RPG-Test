@@ -3,25 +3,25 @@
 GameSceneManager::GameSceneManager() {
 }
 
-void GameSceneManager::addState(int id, GameScene* state) {
+void GameSceneManager::addScene(int id, GameScene* scene) {
 
-    listStates[id] = state;
+    listScenes[id] = scene;
 }
 
-void GameSceneManager::previousState() {
+void GameSceneManager::previousScene() {
 
-    currStatus = prevStatus;
+    currScene = prevScene;
 }
 
-void GameSceneManager::setState(unsigned int status) {
+void GameSceneManager::setScene(unsigned int scene) {
 
-    prevStatus = currStatus;
-    currStatus = status;
+    prevScene = currScene;
+    currScene = scene;
 }
 
-GameScene* GameSceneManager::getState() {
+GameScene* GameSceneManager::getScene() {
 
-    return listStates[currStatus];
+    return listScenes[currScene];
 }
 
 
